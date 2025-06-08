@@ -3,7 +3,7 @@ import { FaEnvelope, FaLinkedin, FaPhone, FaGithub } from 'react-icons/fa';
 import '../styles/Contact.css';
 
 const Contact = () => (
-  <section className="contact-section">
+  <section className="contact-section" id="contact">
     <h2>Contact Me</h2>
     <div className="contact-links">
       <a href="mailto:your.email@example.com" className="contact-item" target="_blank" rel="noopener noreferrer">

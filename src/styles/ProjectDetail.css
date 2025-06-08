@@ -1,7 +1,14 @@
+.project-detail-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .project-detail {
   max-width: 1200px;
   margin: 60px auto 40px;
   padding: 0 20px;
+  flex: 1;
 }
 .back-button {
   display: inline-block;
@@ -77,4 +84,9 @@
   .project-detail-image {
     min-height: 120px;
   }
+}
+
+/* Add spacing above the contact section */
+.contact-section {
+  margin-top: 40px;
 }

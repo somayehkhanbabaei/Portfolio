@@ -1,0 +1,123 @@
+.navbar {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.navbar-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  height: 64px;
+  justify-content: space-between;
+}
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+}
+.navbar-menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.navbar-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 2rem;
+}
+.navbar-links li {
+  position: relative;
+}
+.navbar-links a, .navbar-links span {
+  color: #222;
+  text-decoration: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.navbar-links a:hover, .navbar-links span:hover {
+  background: #f0f0f0;
+}
+.navbar-projects {
+  cursor: pointer;
+}
+.navbar-dropdown {
+  display: none;
+  position: absolute;
+  top: 38px;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: 6px;
+  min-width: 160px;
+  z-index: 10;
+  padding: 0.5rem 0;
+}
+.navbar-dropdown li {
+  width: 100%;
+}
+.navbar-dropdown a {
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  color: #222;
+  border-radius: 0;
+}
+.navbar-dropdown a:hover {
+  background: #f0f0f0;
+}
+.navbar-projects:hover .navbar-dropdown,
+.navbar-dropdown.show {
+  display: block;
+}
+@media (max-width: 800px) {
+  .navbar-menu-icon {
+    display: block;
+  }
+  .navbar-links {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0;
+    border-bottom: 1px solid #eee;
+    display: none;
+  }
+  .navbar-links.active {
+    display: flex;
+  }
+  .navbar-links li {
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .navbar-links a, .navbar-links span {
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 1.1rem;
+    border-radius: 0;
+  }
+  .navbar-dropdown {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+    min-width: 100%;
+    background: #f9f9f9;
+    padding: 0;
+  }
+  .navbar-dropdown li {
+    border-bottom: 1px solid #eee;
+  }
+}
