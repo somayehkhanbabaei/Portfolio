@@ -12,7 +12,7 @@ const projects = [
     longDescription: "- Designed and implemented a weather dashboard UI from scratch based on a custom design. - Integrated with the OpenWeatherMap API for real-time weather data. - Built a robust search and data-fetching flow, including error handling and loading states. - Developed custom scrollable and interactive components for hourly and daily forecasts. - Ensured the app is visually appealing, accessible, and easy to use.",
     technologies: ["React", "JavaScript", "CSS", "JavaScript (ES6+)","Fetch API", "OpenWeatherMap API","Modern UI/UX patterns"],
     github: "https://github.com/somayehkhanbabaei/WeatherApp",
-    demo: "https://somayehportfolio.netlify.app/" // <-- Updated demo link
+    demo: "https://somayehweatherwebapp.netlify.app/" // <-- Updated demo link
   },
   {
     id: 2,
