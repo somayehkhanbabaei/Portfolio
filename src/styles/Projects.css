@@ -12,8 +12,9 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 1200px;      /* Make the card wider */
+  margin: 0 auto;         /* Center the card */
+  padding: 0 24px;        /* Reduce side margin, but keep a little space */
 }
 .project-item {
   display: flex;
@@ -21,22 +22,38 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  min-height: 180px;
+  min-height: 340px;
   align-items: stretch;
 }
 .project-image-placeholder {
-  flex: 1 1 0;
+  flex: 3 1 0;
   background: #e0e0e0;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  color: #888;
-  min-width: 120px;
+  align-items: stretch;
+  justify-content: stretch;
+  min-width: 400px;
+  min-height: 340px;
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: relative;
+  padding: 0;
+}
+.project-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: #e0e0e0;
+  box-shadow: none;
+  margin: 0;
+  position: static;
 }
 .project-info {
-  flex: 2 1 0;
-  padding: 24px;
+  flex: 1 1 0;
+  padding: 32px 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -62,11 +79,17 @@
   background: #0056b3;
 }
 @media (max-width: 700px) {
+  .projects-grid {
+    max-width: 100%;
+    padding: 0 8px;
+  }
   .project-item {
     flex-direction: column;
     min-height: unset;
   }
   .project-image-placeholder {
-    min-height: 120px;
+    min-height: 160px;
+    min-width: unset;
+    padding: 0;
   }
 }

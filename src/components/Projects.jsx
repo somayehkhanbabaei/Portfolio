@@ -5,8 +5,9 @@ import '../styles/Projects.css';
 const projects = [
   {
     id: 1,
-    title: "Project One",
-    description: "This is a short description of Project One. It highlights the main features and technologies used.",
+    title: "Weather App",
+    image: "/images/weather-app.png",
+    description: "This project is a modern weather dashboard built with React. It allows users to search for any city and view the current weather, a detailed hourly forecast, and a multi-day forecast. The app features a clean, responsive UI inspired by professional weather platforms.",
   },
   {
     id: 2,
@@ -32,13 +33,21 @@ const Projects = () => (
       {projects.map((project) => (
         <div className="project-item" key={project.id}>
           <div className="project-image-placeholder">
-            {project.title} Image
+            {project.image ? (
+              <img
+                src={project.image}
+                alt={project.title}
+                className="project-main-image"
+              />
+            ) : (
+              <span>{project.title} Image</span>
+            )}
           </div>
           <div className="project-info">
             <h3>{project.title}</h3>
             <p>{project.description}</p>
             <Link to={`/project/${project.id}`} className="project-detail-btn">
-              View Project
+              More Details
             </Link>
           </div>
         </div>
