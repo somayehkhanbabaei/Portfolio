@@ -5,10 +5,12 @@ const Hero = () => (
   <section className="hero-bg">
     <div className="hero-container">
       <div className="hero-col hero-left">
-        <div className="hero-image-placeholder">Your Photo</div>
+        <div className="hero-image-placeholder">
+          <img src="/images/my-profile.png" alt="Profile Image" />
+        </div>
       </div>
       <div className="hero-col hero-right">
-        <h1>Your Name</h1>
+        <h1>Somayeh Khanbabaei</h1>
         <p>
           This is the "About Me" section. Write a short introduction about yourself, your background, and what you do.
         </p>

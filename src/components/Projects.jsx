@@ -5,19 +5,21 @@ import '../styles/Projects.css';
 const projects = [
   {
     id: 1,
+    title: "Lena Toys",
+    image: "/images/landing-page.png",
+    description: "This is a short description of Project Two. It highlights the main features and technologies used.",
+  },
+    {
+    id: 2,
     title: "Weather App",
     image: "/images/weather-app.png",
     description: "This project is a modern weather dashboard built with React. It allows users to search for any city and view the current weather, a detailed hourly forecast, and a multi-day forecast. The app features a clean, responsive UI inspired by professional weather platforms.",
   },
   {
-    id: 2,
-    title: "Project Two",
-    description: "This is a short description of Project Two. It highlights the main features and technologies used.",
-  },
-  {
     id: 3,
-    title: "Project Three",
-    description: "This is a short description of Project Three. It highlights the main features and technologies used.",
+    title: "Recipe Finder",
+    image: "/images/recipe-finder.png",
+    description: "This project is a recipe finder application that allows users to search for recipes based on ingredients. It features a user-friendly interface and provides detailed information about each recipe, including ingredients, cooking instructions, and nutritional information.",
   },
   {
     id: 4,
