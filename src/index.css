@@ -1,13 +1,20 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  font-family: Arial, sans-serif;
-  background: #f9f9f9;
-  color: #222;
+  @apply font-sans;
 }
-a {
-  color: inherit;
+
+@media (max-width: 426px) {
+  .hero-image {
+    display: none !important;
+  }
+}
+
+@media (max-width: 426px) {
+  .responsive-padding {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
 }

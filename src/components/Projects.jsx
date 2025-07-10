@@ -1,15 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/Projects.css';
+import ProjectCard from './ProjectCard';
 
 const projects = [
   {
     id: 1,
     title: "Lena Toys",
     image: "/images/landing-page.png",
-    description: "This is a short description of Project Two. It highlights the main features and technologies used.",
+    description: "This project is a modern landing page built with React. It provides a visually appealing and responsive interface to showcase a product, service, or brand. The landing page features clean design, smooth navigation, and customizable sections to highlight key information and drive user engagement",
   },
-    {
+  {
     id: 2,
     title: "Weather App",
     image: "/images/weather-app.png",
@@ -20,39 +19,15 @@ const projects = [
     title: "Recipe Finder",
     image: "/images/recipe-finder.png",
     description: "This project is a recipe finder application that allows users to search for recipes based on ingredients. It features a user-friendly interface and provides detailed information about each recipe, including ingredients, cooking instructions, and nutritional information.",
-  },
-  {
-    id: 4,
-    title: "Project Four",
-    description: "This is a short description of Project Four. It highlights the main features and technologies used.",
-  },
+  }
 ];
 
 const Projects = () => (
-  <section className="projects-section">
-    <h2>My Projects</h2>
-    <div className="projects-grid">
+  <section className="my-12">
+    <h2 className="text-4xl font-bold mb-8 text-center text-gray-700">My Projects</h2>
+    <div>
       {projects.map((project) => (
-        <div className="project-item" key={project.id}>
-          <div className="project-image-placeholder">
-            {project.image ? (
-              <img
-                src={project.image}
-                alt={project.title}
-                className="project-main-image"
-              />
-            ) : (
-              <span>{project.title} Image</span>
-            )}
-          </div>
-          <div className="project-info">
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <Link to={`/project/${project.id}`} className="project-detail-btn">
-              More Details
-            </Link>
-          </div>
-        </div>
+        <ProjectCard key={project.id} {...project} />
       ))}
     </div>
   </section>

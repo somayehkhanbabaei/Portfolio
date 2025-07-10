@@ -1,23 +1,49 @@
 import React from 'react';
 import { FaEnvelope, FaLinkedin, FaPhone, FaGithub } from 'react-icons/fa';
-import '../styles/Contact.css';
+
+const contacts = [
+  {
+    href: "mailto:your.email@example.com",
+    icon: <FaEnvelope />,
+    label: "Email",
+  },
+  {
+    href: "https://linkedin.com/in/yourprofile",
+    icon: <FaLinkedin />,
+    label: "LinkedIn",
+  },
+  {
+    href: "tel:+1234567890",
+    icon: <FaPhone />,
+    label: "Phone",
+  },
+  {
+    href: "https://github.com/yourusername",
+    icon: <FaGithub />,
+    label: "GitHub",
+  },
+];
 
 const Contact = () => (
-  <section className="contact-section" id="contact">
-    <h2>Contact Me</h2>
-    <div className="contact-links">
-      <a href="mailto:your.email@example.com" className="contact-item" target="_blank" rel="noopener noreferrer">
-        <FaEnvelope /> <span>Email</span>
-      </a>
-      <a href="https://linkedin.com/in/yourprofile" className="contact-item" target="_blank" rel="noopener noreferrer">
-        <FaLinkedin /> <span>LinkedIn</span>
-      </a>
-      <a href="tel:+1234567890" className="contact-item">
-        <FaPhone /> <span>Phone</span>
-      </a>
-      <a href="https://github.com/yourusername" className="contact-item" target="_blank" rel="noopener noreferrer">
-        <FaGithub /> <span>GitHub</span>
-      </a>
+  <section id="contact" className="py-12 px-[100px]">
+    <div className="bg-white rounded-2xl shadow-2xl p-8">
+      <h2 className="text-4xl font-bold mb-8 text-center text-gray-800">Contact Me</h2>
+      <div className="flex flex-wrap justify-center gap-6">
+        {contacts.map(({ href, icon, label }) => (
+          <a
+            key={label}
+            href={href}
+            target={label !== "Phone" ? "_blank" : undefined}
+            rel={label !== "Phone" ? "noopener noreferrer" : undefined}
+            className="flex flex-col items-center gap-2 text-gray-700 font-semibold text-lg hover:text-gray-900 transition-colors duration-200"
+          >
+            <span className="text-3xl bg-gray-50 rounded-full p-4 shadow hover:bg-gray-100 transition-colors duration-200">
+              {icon}
+            </span>
+            <span>{label}</span>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 );

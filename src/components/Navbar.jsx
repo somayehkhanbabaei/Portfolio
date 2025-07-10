@@ -1,12 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import '../styles/Navbar.css';
 
 const projects = [
-  { id: 1, title: "Project One" },
-  { id: 2, title: "Project Two" },
-  { id: 3, title: "Project Three" },
+  { id: 1, title: "Lena Toys" },
+  { id: 2, title: "Weather App" },
+  { id: 3, title: "Recipe Finder" },
   { id: 4, title: "Project Four" }
 ];
 
@@ -20,7 +19,6 @@ const Navbar = () => {
     setProjectsOpen(false);
   };
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event) {
       if (
@@ -40,43 +38,46 @@ const Navbar = () => {
     };
   }, [projectsOpen]);
 
-  // Toggle dropdown on click (desktop and mobile)
   const handleProjectsToggle = (e) => {
     e.preventDefault();
     setProjectsOpen((open) => !open);
   };
 
   return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        <Link to="/" className="navbar-logo" onClick={closeMenu}>
+    <nav className="fixed top-0 left-0 w-full bg-white shadow-lg z-50">
+      <div className="max-w-7xl mx-auto px-4 flex items-center h-16 justify-between">
+        <Link to="/" className="font-bold text-xl text-blue-600" onClick={closeMenu}>
           My Portfolio
         </Link>
-        <div className="navbar-menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+        <div className="md:hidden text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <FaTimes /> : <FaBars />}
         </div>
-        <ul className={`navbar-links${menuOpen ? ' active' : ''}`}>
+        <ul className={`md:flex md:items-center md:gap-8 absolute md:static left-0 top-16 w-full md:w-auto bg-white shadow-lg md:shadow-none transition-all duration-200 ${menuOpen ? 'block' : 'hidden'} md:block`}>
           <li>
-            <Link to="/" onClick={closeMenu}>Home</Link>
+            <Link
+              to="/"
+              className="block px-4 py-2 font-bold text-gray-700 transition-all duration-300 rounded hover:bg-blue-100 hover:text-blue-700 hover:scale-110"
+              onClick={closeMenu}
+            >
+              Home
+            </Link>
           </li>
-          <li
-            className="navbar-projects"
-            ref={dropdownRef}
-          >
+          <li className="relative" ref={dropdownRef}>
             <span
               onClick={handleProjectsToggle}
+              className="block px-4 py-2 font-bold text-gray-700 transition-all duration-300 rounded cursor-pointer hover:bg-blue-100 hover:text-blue-700 hover:scale-110"
               aria-haspopup="true"
               aria-expanded={projectsOpen}
               tabIndex={0}
-              style={{ userSelect: 'none' }}
             >
               My Projects
             </span>
-            <ul className={`navbar-dropdown${projectsOpen ? ' show' : ''}`}>
+            <ul className={`absolute left-0 mt-2 bg-white shadow-lg rounded w-48 z-10 ${projectsOpen ? '' : 'hidden'}`}>
               {projects.map((project) => (
                 <li key={project.id}>
                   <Link
                     to={`/project/${project.id}`}
+                    className="block px-4 py-2 font-bold text-gray-700 transition-all duration-300 rounded hover:bg-blue-100 hover:text-blue-700 hover:scale-110"
                     onClick={closeMenu}
                   >
                     {project.title}
@@ -86,7 +87,13 @@ const Navbar = () => {
             </ul>
           </li>
           <li>
-            <a href="#contact" onClick={closeMenu}>Contact</a>
+            <a
+              href="#contact"
+              className="block px-4 py-2 font-bold text-gray-700 transition-all duration-300 rounded hover:bg-blue-100 hover:text-blue-700 hover:scale-110"
+              onClick={closeMenu}
+            >
+              Contact
+            </a>
           </li>
         </ul>
       </div>
