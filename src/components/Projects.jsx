@@ -23,8 +23,8 @@ const projects = [
 ];
 
 const Projects = () => (
-  <section className="my-12">
-    <h2 className="text-4xl font-bold mb-8 text-center text-gray-700">My Projects</h2>
+  <section className="my-12 px-[100px]">
+    <h2 className="text-4xl font-bold mb-8 text-center text-gray-800">My Projects</h2>
     <div>
       {projects.map((project) => (
         <ProjectCard key={project.id} {...project} />

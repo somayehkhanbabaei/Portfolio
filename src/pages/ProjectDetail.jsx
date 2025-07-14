@@ -103,7 +103,7 @@ const ProjectDetail = () => {
           </div>
         </div>
       </div>
-      <div className="mt-12 w-full max-w-3xl">
+      <div className="mt-12 w-full max-w-5xl">
         <Contact />
       </div>
     </div>

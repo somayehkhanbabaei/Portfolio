@@ -5,8 +5,7 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 const projects = [
   { id: 1, title: "Lena Toys" },
   { id: 2, title: "Weather App" },
-  { id: 3, title: "Recipe Finder" },
-  { id: 4, title: "Project Four" }
+  { id: 3, title: "Recipe Finder" }
 ];
 
 const Navbar = () => {
@@ -46,7 +45,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full bg-white shadow-lg z-50">
       <div className="max-w-7xl mx-auto px-4 flex items-center h-16 justify-between">
-        <Link to="/" className="font-bold text-xl text-blue-600" onClick={closeMenu}>
+        <Link to="/" className="font-bold text-xl text-gray-600" onClick={closeMenu}>
           My Portfolio
         </Link>
         <div className="md:hidden text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
@@ -56,7 +55,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/"
-              className="block px-4 py-2 font-bold text-gray-700 transition-all duration-300 rounded hover:bg-blue-100 hover:text-blue-700 hover:scale-110"
+              className="block px-4 py-2 font-bold text-gray-700 transition-all duration-300 rounded hover:bg-gray-100 hover:text-gray-700 hover:scale-110"
               onClick={closeMenu}
             >
               Home
@@ -65,7 +64,7 @@ const Navbar = () => {
           <li className="relative" ref={dropdownRef}>
             <span
               onClick={handleProjectsToggle}
-              className="block px-4 py-2 font-bold text-gray-700 transition-all duration-300 rounded cursor-pointer hover:bg-blue-100 hover:text-blue-700 hover:scale-110"
+              className="block px-4 py-2 font-bold text-gray-700 transition-all duration-300 rounded cursor-pointer hover:bg-gray-100 hover:text-gray-700 hover:scale-110"
               aria-haspopup="true"
               aria-expanded={projectsOpen}
               tabIndex={0}
@@ -77,7 +76,7 @@ const Navbar = () => {
                 <li key={project.id}>
                   <Link
                     to={`/project/${project.id}`}
-                    className="block px-4 py-2 font-bold text-gray-700 transition-all duration-300 rounded hover:bg-blue-100 hover:text-blue-700 hover:scale-110"
+                    className="block px-4 py-2 font-bold text-gray-700 transition-all duration-300 rounded hover:bg-gray-100 hover:text-gray-700 hover:scale-110"
                     onClick={closeMenu}
                   >
                     {project.title}
@@ -89,7 +88,7 @@ const Navbar = () => {
           <li>
             <a
               href="#contact"
-              className="block px-4 py-2 font-bold text-gray-700 transition-all duration-300 rounded hover:bg-blue-100 hover:text-blue-700 hover:scale-110"
+              className="block px-4 py-2 font-bold text-gray-700 transition-all duration-300 rounded hover:bg-gray-100 hover:text-gray-700 hover:scale-110"
               onClick={closeMenu}
             >
               Contact

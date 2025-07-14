@@ -6,15 +6,3 @@ body {
   @apply font-sans;
 }
 
-@media (max-width: 426px) {
-  .hero-image {
-    display: none !important;
-  }
-}
-
-@media (max-width: 426px) {
-  .responsive-padding {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-  }
-}
