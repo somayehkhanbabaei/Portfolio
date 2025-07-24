@@ -3,22 +3,22 @@ import { FaEnvelope, FaLinkedin, FaPhone, FaGithub } from 'react-icons/fa';
 
 const contacts = [
   {
-    href: "mailto:your.email@example.com",
+    href: "somayehkhanbabaei.nl@gmail.com",
     icon: <FaEnvelope />,
     label: "Email",
   },
   {
-    href: "https://linkedin.com/in/yourprofile",
+    href: "https://www.linkedin.com/in/somayeh-khanbabaei-34783a368/",
     icon: <FaLinkedin />,
     label: "LinkedIn",
   },
   {
-    href: "tel:+1234567890",
+    href: "tel:+31616692822",
     icon: <FaPhone />,
     label: "Phone",
   },
   {
-    href: "https://github.com/yourusername",
+    href: "https://github.com/somayehkhanbabaei",
     icon: <FaGithub />,
     label: "GitHub",
   },
